@@ -13,7 +13,7 @@
                 function login(loginForm) {
                     if($scope.loginForm.$valid)
                     {
-                        localStorage.setItem("login",true);
+                        localStorage.setItem("loginJokesApp",true);
                         $location.path('/jokesPage');
                     }
                 }
