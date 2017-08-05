@@ -9,12 +9,6 @@
                     fetchJokes: fetchJokes,
                     fetchJokesCategories: fetchJokesCategories
                 };
-
-                /**
-                 * fetchs the user payment profile information from upgradeEligibilityPayment api.
-                 * @function fetchPaymentDetails
-                 * @returns {object} promise object user payment profile information.
-                 */
                 function fetchJokes (selectedJoke) {
                     return $http.get(boilerplateConstants.jokesApi, {
                         params: {
