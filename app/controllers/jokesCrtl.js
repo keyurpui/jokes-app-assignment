@@ -16,9 +16,6 @@
                  * Controller startup logic
                  */
                 function activate() {
-                    // if (!userAuthenticationSrv.getUserLoginInfo()) {
-                    //     $location.path("/");
-                    // }
                     jokesPageSrv.fetchJokesCategories().then(function (response) {
                         $scope.jokes.jokeCategories = response;
                     });

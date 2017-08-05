@@ -11,9 +11,9 @@
     <div>
         <a class="dropdown-item" ng-click="loadSelectedJoke('')">None</a>
     </div>
-    <div ng-repeat="joke in jokes.jokeCategories">
+    <div ng-repeat="jokeCategory in jokes.jokeCategories">
         <a class="dropdown-item"
-          ng-click="loadSelectedJoke(joke)">{{joke}}</a>
+          ng-click="loadSelectedJoke(jokeCategory)">{{jokeCategory}}</a>
     </div>
   </div>
 </div>
@@ -26,5 +26,8 @@
     ng-model-options="{debounce: 1500}"/>
 </div>
 
-<p>{{jokes.selectedCategoryJokes}}</p>
-
+<div ng-repeat="joke in jokes.selectedCategoryJokes">
+  <img ng-src="{{joke.icon_url}}" alt="Mountain View"/>
+  <p>{{joke.value}}</p>
+  <a ng-href="{{joke.url}}" target="_blank" >Link</a>
+</div>

@@ -4,7 +4,7 @@
 
   app.run(['$rootScope', '$location', function ($rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
-      var logged = localStorage.getItem('login');
+      var logged = localStorage.getItem('loginJokesApp');
       var appTo = currRoute.requireAuth;
       if (!logged) {
         if (appTo) {
