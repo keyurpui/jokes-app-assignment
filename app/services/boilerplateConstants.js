@@ -2,6 +2,8 @@
     'use strict';
     angular.module('boilerplate')
         .constant('boilerplateConstants', {
-            login: 'login'
+            jokesApi: 'https://api.chucknorris.io/jokes/search',
+            jokesCategoriesApi: 'https://api.chucknorris.io/jokes/categories',
+            userLogin: 'userLogin'
         });
 })();

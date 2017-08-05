@@ -1,0 +1,30 @@
+<h2 class="text-center">AngularJS Boilerplate</h2>
+<!-- slider directive -->
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle"
+    type="button" id="dropdownMenuButton"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   {{jokes.selectedJoke}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div>
+        <a class="dropdown-item" ng-click="loadSelectedJoke('')">None</a>
+    </div>
+    <div ng-repeat="joke in jokes.jokeCategories">
+        <a class="dropdown-item"
+          ng-click="loadSelectedJoke(joke)">{{joke}}</a>
+    </div>
+  </div>
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" 
+    placeholder="helloo"
+    ng-model="jokes.searchedJoke"
+    ng-change="loadSearchedJoke()" 
+    ng-model-options="{debounce: 1500}"/>
+</div>
+
+<p>{{jokes.selectedCategoryJokes}}</p>
+
