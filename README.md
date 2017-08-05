@@ -1,5 +1,6 @@
 # Note for code reviewer and interviwer
 I have used Angular boilerplate from online available git resource. The task of gulp are not written by my self, it is used from boilerplate.
+**Credit* git clone https://github.com/jbutko/AngularJS-Boilerplate.git
 
 # Features
 * SASS support including sourceMaps
@@ -22,7 +23,7 @@ bower install angularjs-boilerplate
 or
 
 ```bash
-git clone https://github.com/keyurpui/jokes-app-assignment.git
+git clone https://github.com/jbutko/AngularJS-Boilerplate.git
 ```
 
 ## 1. Setup
