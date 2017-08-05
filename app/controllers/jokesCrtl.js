@@ -3,10 +3,10 @@
 
     angular.module('boilerplate')
 
-        .controller('jokesCrtl', ['$scope', 'jokesPageSrv',
-            function ($scope, jokesPageSrv) {
+        .controller('jokesCrtl', ['$scope', 'jokesPageSrv', 'boilerplateConstants',
+            function ($scope, jokesPageSrv, boilerplateConstants) {
                 $scope.jokes = {};
-                $scope.jokes.selectedJoke = 'None';
+                $scope.jokes.selectedJoke = boilerplateConstants.none;
                 $scope.jokes.searchedJoke = '';
 
                 $scope.loadSelectedJoke = loadSelectedJoke;
@@ -22,7 +22,7 @@
                 }
 
                 function loadSelectedJoke(selectedJoke) {
-                    $scope.jokes.selectedJoke = selectedJoke ? selectedJoke : 'None';
+                    $scope.jokes.selectedJoke = selectedJoke ? selectedJoke : boilerplateConstants.none;
                     $scope.jokes.searchedJoke = selectedJoke;
                     if (selectedJoke) {
                         callFetchJoke(selectedJoke);
@@ -30,7 +30,7 @@
                 }
 
                 function loadSearchedJoke() {
-                    $scope.jokes.selectedJoke = 'None';
+                    $scope.jokes.selectedJoke = boilerplateConstants.none;
                     if ($scope.jokes.searchedJoke) {
                         callFetchJoke($scope.jokes.searchedJoke);
                     }

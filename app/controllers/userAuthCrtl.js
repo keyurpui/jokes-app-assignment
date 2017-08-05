@@ -3,8 +3,8 @@
 
     angular.module('boilerplate')
 
-        .controller('userAuthCrtl', ['$scope', '$location',
-            function ($scope, $location) {
+        .controller('userAuthCrtl', ['$scope', '$location', 'boilerplateConstants',
+            function ($scope, $location, boilerplateConstants) {
                 $scope.user = {};
                 $scope.user.email = '';
                 $scope.user.password = '';
@@ -13,7 +13,7 @@
                 function login(loginForm) {
                     if($scope.loginForm.$valid)
                     {
-                        localStorage.setItem("loginJokesApp",true);
+                        localStorage.setItem(boilerplateConstants.loginJokesApp,true);
                         $location.path('/jokesPage');
                     }
                 }
