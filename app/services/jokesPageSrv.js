@@ -9,7 +9,8 @@
                     fetchJokes: fetchJokes,
                     fetchJokesCategories: fetchJokesCategories
                 };
-                function fetchJokes (selectedJoke) {
+
+                function fetchJokes(selectedJoke) {
                     return $http.get(boilerplateConstants.jokesApi, {
                         params: {
                             query: selectedJoke
@@ -18,13 +19,14 @@
                         return response.data;
                     });
                 }
-                
-                function fetchJokesCategories () {
+
+                function fetchJokesCategories() {
                     return $http.get(boilerplateConstants.jokesCategoriesApi).then(function (response) {
                         return response.data;
                     });
                 }
 
                 return services;
+                
             }]);
 })();
