@@ -26,8 +26,12 @@
     ng-model-options="{debounce: 1500}"/>
 </div>
 
-<div ng-repeat="joke in jokes.selectedCategoryJokes">
-  <img ng-src="{{joke.icon_url}}" alt="Mountain View" style="width:304px;height:228px;">
-  <p>{{joke.value}}</p>
-  <a ng-href="{{joke.url}}" target="_blank" >Link</a>
+<div class="media panel panel-primary"  ng-repeat="joke in jokes.selectedCategoryJokes">
+  <div class="media-left media-middle">
+      <img class="media-object" ng-src="{{joke.icon_url}}">
+  </div>
+  <div class="media-body">
+    <p>{{joke.value}}</p>
+  </div>
+  <div class="media-right media-middle"><a ng-href="{{joke.url}}" target="_blank" >Link</a></div>
 </div>
