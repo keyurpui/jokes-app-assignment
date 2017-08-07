@@ -1,37 +1,37 @@
-<h2 class="text-center">AngularJS Boilerplate</h2>
-<!-- slider directive -->
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle"
-    type="button" id="dropdownMenuButton"
-    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   {{jokes.selectedJoke}}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <div>
-        <a class="dropdown-item" ng-click="loadSelectedJoke('')">None</a>
+<div class="jumbotron text-center">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <div class="input-group jokesPageHeader">
+            <input type="text" class="form-control" id="searchBox" placeholder="Search jokes" ng-model="jokes.searchedJoke" ng-change="loadSearchedJoke()"
+              ng-model-options="{debounce: 1500}" />
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="col-xs-12 col-md-4">
+            <span>Category</span>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        {{jokes.selectedJoke}}
+        <span class="caret"></span>
+      </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li ng-repeat="jokeCategory in jokes.jokeCategories"><a href="#" ng-click="loadSelectedJoke(jokeCategory)">{{jokeCategory}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="media panel panel-primary" ng-repeat="joke in jokes.selectedCategoryJokes">
+        <div class="media-left">
+          <img class="media-object" ng-src="{{joke.icon_url}}">
+        </div>
+        <div class="media-body">
+          <p>{{joke.value}}</p>
+        </div>
+        <div class="media-right media-middle"><a ng-href="{{joke.url}}" target="_blank">Link</a></div>
+      </div>
     </div>
-    <div ng-repeat="jokeCategory in jokes.jokeCategories">
-        <a class="dropdown-item"
-          ng-click="loadSelectedJoke(jokeCategory)">{{jokeCategory}}</a>
-    </div>
+    <!-- End col div -->
   </div>
-</div>
-
-<div class="input-group">
-  <input type="text" class="form-control" 
-    placeholder="helloo"
-    ng-model="jokes.searchedJoke"
-    ng-change="loadSearchedJoke()" 
-    ng-model-options="{debounce: 1500}"/>
-</div>
-
-<div class="media panel panel-primary"  ng-repeat="joke in jokes.selectedCategoryJokes">
-  <div class="media-left media-middle">
-      <img class="media-object" ng-src="{{joke.icon_url}}">
-  </div>
-  <div class="media-body">
-    <p>{{joke.value}}</p>
-  </div>
-  <div class="media-right media-middle"><a ng-href="{{joke.url}}" target="_blank" >Link</a></div>
+  <!-- End container -->
 </div>

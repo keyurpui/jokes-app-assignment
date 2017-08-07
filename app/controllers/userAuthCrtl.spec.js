@@ -27,7 +27,7 @@ describe('userAuthCrtl controller', function () {
             scope.login(scope.loginForm );
             expect($location.path).toHaveBeenCalledWith('/jokesPage');
         });
-        it('should check login function positive scenario', function () {
+        it('should check login function nagative scenario', function () {
             scope.loginForm = {
                 $valid : false
             }
