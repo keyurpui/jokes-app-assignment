@@ -1,3 +1,7 @@
+/**
+ * Dummy end point used by specs.
+ */
+
 var Endpoint_jokesCategories = (function () {
     'use strict';
 

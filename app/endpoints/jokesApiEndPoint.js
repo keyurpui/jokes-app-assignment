@@ -1,3 +1,7 @@
+/**
+ * Dummy end point used by specs.
+ */
+
 var Endpoint_jokesApi = (function () {
     'use strict';
 

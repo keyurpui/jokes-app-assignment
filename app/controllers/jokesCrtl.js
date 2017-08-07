@@ -12,6 +12,7 @@
                 $scope.loadSelectedJoke = loadSelectedJoke;
                 $scope.loadSearchedJoke = loadSearchedJoke;
                 activate();
+
                 /**
                  * Controller startup logic
                  */
@@ -20,8 +21,13 @@
                         $scope.jokes.jokeCategories = response;
                     });
                 }
-
-                function loadSelectedJoke(selectedJoke) {
+                
+                /**
+                 * Loads selected category jokes, selection done by dropdown.
+                 * @function loadSelectedJoke
+                 * @param {String} selectedJoke jokes category
+                 */
+                function loadSelectedJoke (selectedJoke) {
                     $scope.jokes.selectedJoke = selectedJoke ? selectedJoke : boilerplateConstants.none;
                     $scope.jokes.searchedJoke = selectedJoke;
                     if (selectedJoke) {
@@ -29,13 +35,21 @@
                     }
                 }
 
-                function loadSearchedJoke() {
+                /**
+                 * Loads searched category jokes, searching done by inputbox.
+                 * @function loadSearchedJoke
+                 */
+                function loadSearchedJoke () {
                     $scope.jokes.selectedJoke = boilerplateConstants.none;
                     if ($scope.jokes.searchedJoke) {
                         callFetchJoke($scope.jokes.searchedJoke);
                     }
                 }
 
+                /**
+                 * Gets jokes by calling fetchJokes function of jokesPageSrv.
+                 * @param {String} jokeCategory selected joke category
+                 */
                 function callFetchJoke(jokeCategory) {
                     if (jokeCategory) {
                         jokesPageSrv.fetchJokes(jokeCategory).then(function (response) {
