@@ -1,9 +1,8 @@
-describe('Users factory', function () {
+describe('boilerplateConstants factory', function () {
     var service;
     
-    beforeEach(angular.mock.module('boilerplate'));
-
     beforeEach(function () {
+        angular.mock.module('boilerplate');
         inject(function ($injector) {
             service = $injector.get('boilerplateConstants');
         });
